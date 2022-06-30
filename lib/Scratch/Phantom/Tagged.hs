@@ -13,8 +13,8 @@ untag = unTagged
 retag :: Proxy tag' -> Tagged tag a -> Tagged tag' a
 retag _ (Tagged a) = (Tagged a)
 
-toProxy :: Tagged tag a -> Proxy tag
-toProxy _ = Proxy
+getTag :: Tagged tag a -> Proxy tag
+getTag _ = Proxy
 
 instance Functor (Tagged tag) where
   fmap f = Tagged . f . unTagged
