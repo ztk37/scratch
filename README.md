@@ -1,6 +1,6 @@
 # scratch
 
-> Learning Haskell concepts by implementing them from scratch.
+> Practicing Haskell concepts by implementing them from scratch.
 
 ## Future Work
 
