@@ -1,9 +1,11 @@
+{-# LANGUAGE GeneralizedNewtypeDeriving #-}
+
 module Scratch.Phantom.Tagged where
 
 import Scratch.Phantom.Proxy
 import Data.Bifunctor
 
-data Tagged tag a = Tagged
+newtype Tagged tag a = Tagged
     { unTagged :: a
     } deriving (Eq, Show)
 
@@ -11,7 +13,7 @@ untag :: Tagged tag a -> a
 untag = unTagged
 
 retag :: Proxy tag' -> Tagged tag a -> Tagged tag' a
-retag _ (Tagged a) = (Tagged a)
+retag _ (Tagged a) = Tagged a
 
 getTag :: Tagged tag a -> Proxy tag
 getTag _ = Proxy
