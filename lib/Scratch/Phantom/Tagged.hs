@@ -1,5 +1,3 @@
-{-# LANGUAGE GeneralizedNewtypeDeriving #-}
-
 module Scratch.Phantom.Tagged where
 
 import Scratch.Phantom.Proxy
