@@ -1,0 +1,22 @@
+name: lint
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  hlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: "Set up HLint"
+        uses: haskell/actions/hlint-setup@v2
+        with:
+          version: "3.1.6"
+
+      - name: "Run HLint"
+        uses: haskell/actions/hlint-run@v2
+        with:
+          path: '["app/", "lib/"]'
+          fail-on: warning
